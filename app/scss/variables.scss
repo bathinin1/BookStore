@@ -1,0 +1,54 @@
+$light-background: #f1f1f1;
+
+
+$MobileScreenWidth: 600px;
+$TabletScreenWidth: 992px;
+$NotMobileScreenWidth: 601px;
+$BelowTablet: 768px;
+
+@mixin tablet{
+  @media only screen and (min-width: $MobileScreenWidth) and (max-width: $TabletScreenWidth) {
+    @content;;
+  }
+}
+
+@mixin mobile{
+  @media only screen and (max-width: $MobileScreenWidth) {
+    @content;;
+  }
+}
+
+@mixin mobile-landscape{
+  @media only screen and (min-device-width: 480px)
+  and (max-device-width: 670px)
+  and (orientation: landscape) {
+    @content;;
+  }
+}
+
+@mixin iphone-landscape{
+  @media only screen
+  and (min-device-width : 375px)
+  and (max-device-width : 670px)
+  and (orientation : landscape){
+    @content;;
+  }
+}
+
+@mixin not-mobile{
+  @media only screen and (min-width: $NotMobileScreenWidth) {
+    @content;;
+  }
+}
+
+@mixin tablet-mobile{
+  @media only screen and (max-width: $TabletScreenWidth) {
+    @content;;
+  }
+}
+
+@mixin below-tablet{
+  @media only screen and (max-width: $BelowTablet) {
+    @content;;
+  }
+}
